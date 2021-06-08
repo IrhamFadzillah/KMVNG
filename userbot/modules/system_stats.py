@@ -165,7 +165,7 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "` Yama Version: \n "
+            "` KMVNG Version: \n "
             f"{verout}"
             "` \n"
             "   Revision: "
@@ -231,7 +231,7 @@ async def amireallyalive(alive):
     await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f" `Yama` is running on  `{UPSTREAM_REPO_BRANCH}`\n"
+        f" `KMVNG` is running on  `{UPSTREAM_REPO_BRANCH}`\n"
         f" `User     :`{DEFAULTUSER}\n"
         f" `Telethon :`v {version.__version__}\n"
         f" `Python   :`v {python_version()}\n"
