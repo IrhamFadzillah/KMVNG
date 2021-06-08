@@ -1,7 +1,7 @@
 {
-  "name": "Yama",
-  "description": "[Yama] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database, which can be coupled up with Mongo DB and a Redis backend",
-  "logo": "https://telegra.ph/file/03cda8fe219b30f6d847d.jpg",
+  "name": "KMVNG",
+  "description": "[KMVNG] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database, which can be coupled up with Mongo DB and a Redis backend",
+  "logo": "https://telegra.ph/file/46373657f51df5d28ed7f.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/IrhamFadzillah/Yama",
+  "repository": "https://github.com/IrhamFadzillah/KMVNG",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
   "success_url": "https://t.me/StayWithMe69",
   "stack": "container",
@@ -151,7 +151,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[MAIN BOT MULU ALAY NGENTOT 🐨]",
+      "value": "",
       "required": false
     },
     "ALIVE_NAME": {

@@ -75,12 +75,12 @@ async def mention_afk(mention):
         if mention.sender_id not in USERS or chat_title not in USERS:
             if AFKREASON:
                 await mention.reply(
-                    f"**Gua Afk Dulu Bentaran.** (Since: {afk_str})"
+                    f"**GUA OFF DULU YA NJENG.** (Since: {afk_str})"
                     f"\nReason: `{AFKREASON}`."
                 )
             else:
                 await mention.reply(
-                    f"**Gua Afk Dulu Bentaran.** (Since: {afk_str})"
+                    f"**GUA OFF DULU YA NJENG.** (Since: {afk_str})"
                     "\n"
                 )
             if mention.sender_id is not None:
@@ -91,12 +91,12 @@ async def mention_afk(mention):
             if USERS[mention.sender_id] % randint(2, 4) == 0:
                 if AFKREASON:
                     await mention.reply(
-                        f"**Saya Lagi Off.** (Since: {afk_str})"
+                        f"**GUA LAGI OFF ASUH.** (Since: {afk_str})"
                         f"\nReason: `{AFKREASON}`."
                     )
                 else:
                     await mention.reply(
-                        f"**Saya Lagi Off.** (Since: {afk_str})"
+                        f"**GUA LAGI OFF ASUH.** (Since: {afk_str})"
                         "\n"
                     )
             if mention.sender_id is not None:
@@ -162,12 +162,12 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"**Saya Lagi Off.** (Since: {afk_str})"
+                        f"**GUA LAGI OFF ASUH.** (Since: {afk_str})"
                         f"\nReason: `{AFKREASON}`."
                     )
                 else:
                     await sender.reply(
-                        f"**Saya Lagi Off.** (Since: {afk_str})"
+                        f"**GUA LAGI OFF ASUH.** (Since: {afk_str})"
                         "\n"
                     )
                 USERS.update({sender.sender_id: 1})
@@ -176,12 +176,12 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            "**Saya Lagi Off.** (Since: {afk_str})"
+                            "**OFF DULU NJING.** (Since: {afk_str})"
                             f"\nReason: `{AFKREASON}`."
                         )
                     else:
                         await sender.reply(
-                            "**Saya Lagi Off.** (Since: {afk_str})"
+                            "**OFF DULU NJING.** (Since: {afk_str})"
                             "\n"
                         )
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
@@ -207,9 +207,9 @@ async def set_afk(afk_e):
     afk_start = start1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit("**Bye Kintil Lu Semua!**" f"\nReason: `{string}`")
+        await afk_e.edit("**BYE KNTOL LU SEMUA!**" f"\nReason: `{string}`")
     else:
-        await afk_e.edit("**Bye Kintil Lu Semua!**")
+        await afk_e.edit("**BYE KNTOL LU SEMUA!**")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nGua Afk Dulu Mang!")
     ISAFK = True
@@ -231,7 +231,7 @@ async def type_afk_is_not_true(notafk):
     afk_end = not_afk.replace(microsecond=0)
     if ISAFK:
         ISAFK = False
-        msg = await notafk.edit("**Assamulaikum Sih ganteng Mau Lewat!**")
+        msg = await notafk.edit("**GUA UDH ON NIH KNTOL!**")
         await asyncio.sleep(3)
         await msg.delete()
         if BOTLOG:

@@ -100,9 +100,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/IrhamFadzillah/Yama.git")
+    "https://github.com/IrhamFadzillah/KMVNG.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "x-sql-extended")
+    "UPSTREAM_REPO_BRANCH", "master")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -173,7 +173,7 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/03cda8fe219b30f6d847d.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/46373657f51df5d28ed7f.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -312,7 +312,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```Yama Telah Aktif```")
+    await bot.send_message(BOTLOG_CHATID, "```KMVNG Telah Aktif```")
     return
 
 with bot:
@@ -395,8 +395,8 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("I'm [Yama](https://github.com/IrhamFadzillah/Yama) modules helper...\nplease make your own bot, don't use mine 😋")
-            else:
+                await event.reply("GUA [KMVNG](https://github.com/IrhamFadzillaYamh/KMVNG) modules helper...\nplease make your own bot, don't use mine ")
+            
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
@@ -408,8 +408,8 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Please Use Only With .help Command",
-                    text="{}\nTotal loaded Modules: {}\n               \n **Info Module Yama** \n".format(
-                        "Yama modules helper",
+                    text="{}\nTotal Module Yang Di muat: {}\n               \n **Info Module KMVNG** \n".format(
+                        "KMVNG Modul Bantuan",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -417,7 +417,7 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Yama Helper",
+                    "KMVNG Helper",
                     text="List of Modules",
                     buttons=[],
                     link_preview=True)
