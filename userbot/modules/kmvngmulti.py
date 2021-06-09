@@ -500,7 +500,9 @@ CMD_HELP.update(
     {
         "hazmat": ".hz or .hz [flip, x2, rotate (degree), background (number), black]"
         "\nUsage: Reply to a image / sticker to suit up!"
-        "\n@hazmat_suit_bot"})
+        "\n@hazmat_suit_bot"
+    }
+)
 
 CMD_HELP.update(
     {

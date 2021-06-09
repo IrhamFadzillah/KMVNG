@@ -1,6 +1,7 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import bot, CMD_HELP
+
+from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
@@ -15,10 +16,9 @@ async def _(event):
     async with bot.conversation("@scriptkiddies_bot") as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(
-                    incoming=True,
-                    from_users=510263282))
-            await conv.send_message(f'/{nmap} {link}')
+                events.NewMessage(incoming=True, from_users=510263282)
+            )
+            await conv.send_message(f"/{nmap} {link}")
             response = await response
         except YouBlockedUserError:
             await event.reply("Unblock @ scriptkiddies_bot dulu Goblok!!")
@@ -39,10 +39,9 @@ async def _(event):
     async with bot.conversation("@scriptkiddies_bot") as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(
-                    incoming=True,
-                    from_users=510263282))
-            await conv.send_message(f'/{subdomain} {link}')
+                events.NewMessage(incoming=True, from_users=510263282)
+            )
+            await conv.send_message(f"/{subdomain} {link}")
             response = await response
         except YouBlockedUserError:
             await event.reply("Unblock @ scriptkiddies_bot dulu Goblok!!")
@@ -63,10 +62,9 @@ async def _(event):
     async with bot.conversation("@scriptkiddies_bot") as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(
-                    incoming=True,
-                    from_users=510263282))
-            await conv.send_message(f'/{httpheader} {link}')
+                events.NewMessage(incoming=True, from_users=510263282)
+            )
+            await conv.send_message(f"/{httpheader} {link}")
             response = await response
         except YouBlockedUserError:
             await event.reply("Unblock @ scriptkiddies_bot dulu Goblok!!")
@@ -76,12 +74,13 @@ async def _(event):
             await event.client.delete_messages(httpheader, response.message.message)
 
 
-CMD_HELP.update({
-    "phreaker":
-    "`.nmap <bug hosts>`\
+CMD_HELP.update(
+    {
+        "phreaker": "`.nmap <bug hosts>`\
 \nUsage: to get info bug/host.\
 \n\n`.subd <bug hosts>`\
 \nUsage: to get subdomain bug/host.\
 \n\n`.cek <bug hosts>`\
 \nUsage: to cek respons bug/host."
-})
+    }
+)

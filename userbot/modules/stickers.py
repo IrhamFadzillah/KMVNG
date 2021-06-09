@@ -19,9 +19,10 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP, bot, S_PACK_NAME as custompack
+from userbot import CMD_HELP
+from userbot import S_PACK_NAME as custompack
+from userbot import bot
 from userbot.events import register
-
 
 KANGING_STR = [
     "Eh... Koq bagus... aku curry ahhh :3",
@@ -371,4 +372,6 @@ CMD_HELP.update(
         "\n\n>`.stkrinfo`"
         "\nUsage: Gets info about the sticker pack."
         "\n\n>`.getsticker`"
-        "\nUsage: reply to a sticker to get 'PNG' file of sticker."})
+        "\nUsage: reply to a sticker to get 'PNG' file of sticker."
+    }
+)

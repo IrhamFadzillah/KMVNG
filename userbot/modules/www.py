@@ -17,7 +17,7 @@ from userbot.events import register
 
 @register(outgoing=True, pattern=r"^\.speed$")
 async def speedtst(spd):
-    """ For .speed command, use SpeedTest to check server speeds. """
+    """For .speed command, use SpeedTest to check server speeds."""
     await spd.edit("`Running speed test . . .`")
     test = Speedtest()
 
@@ -58,7 +58,7 @@ def speed_convert(size):
 
 @register(outgoing=True, pattern=r"^\.dc$")
 async def neardc(event):
-    """ For .dc command, get the nearest datacenter information. """
+    """For .dc command, get the nearest datacenter information."""
     result = await event.client(functions.help.GetNearestDcRequest())
     await event.edit(
         f"Country : `{result.country}`\n"
@@ -69,7 +69,7 @@ async def neardc(event):
 
 @register(outgoing=True, pattern=r"^\.ping$")
 async def pingme(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """For .ping command, ping the userbot from any chat."""
     start = datetime.now()
     await pong.edit("`Pong!`")
     end = datetime.now()
@@ -77,10 +77,10 @@ async def pingme(pong):
     await pong.edit("`Pong!\n%sms`" % (duration))
 
 
-CMD_HELP.update({"speed": ">`.speed`"
-                 "\nUsage: Does a speedtest and shows the results.",
-                 "dc": ">`.dc`"
-                 "\nUsage: Finds the nearest datacenter from your server.",
-                 "ping": ">`.ping`"
-                 "\nUsage: Shows how long it takes to ping your bot.",
-                 })
+CMD_HELP.update(
+    {
+        "speed": ">`.speed`" "\nUsage: Does a speedtest and shows the results.",
+        "dc": ">`.dc`" "\nUsage: Finds the nearest datacenter from your server.",
+        "ping": ">`.ping`" "\nUsage: Shows how long it takes to ping your bot.",
+    }
+)

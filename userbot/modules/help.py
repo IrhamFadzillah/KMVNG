@@ -6,6 +6,7 @@
 """ Userbot help command """
 
 import asyncio
+
 from userbot import CMD_HELP
 from userbot.events import register
 
@@ -14,7 +15,7 @@ modules = CMD_HELP
 
 @register(outgoing=True, pattern="^.help(?: |$)(.*)")
 async def help(event):
-    """ For .help command,"""
+    """For .help command,"""
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
@@ -24,17 +25,18 @@ async def help(event):
             await asyncio.sleep(18)
             await event.delete()
     else:
-        await event.edit(f"\
+        await event.edit(
+            f"\
             \n   Untuk melihat lengkap Command\
             \n   Contoh: .help <nama module>\
             \n   Modules Aktif: {len(modules)}\
             \n   Ketik Contoh `.help afk` Untuk Informasi Module\
-          \n")
+          \n"
+        )
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
             string += "`\t• "
-        await event.reply(f"•{string}"
-                          "\n")
+        await event.reply(f"•{string}" "\n")
         await asyncio.sleep(1000)
         await event.delete()

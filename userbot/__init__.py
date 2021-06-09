@@ -396,7 +396,7 @@ with bot:
         async def handler(event):
             if event.message.from_id != uid:
                 await event.reply("GUA [KMVNG](https://github.com/IrhamFadzillaYamh/KMVNG) modules helper...\nplease make your own bot, don't use mine ")
-            
+
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602

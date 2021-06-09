@@ -128,4 +128,5 @@ CMD_HELP.update(
     \nUsage: hiks\
     \n\n`.punten` ; `.pantau`\
     \nUsage: coba aja."
-    })
+    }
+)

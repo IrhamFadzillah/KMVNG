@@ -1,16 +1,16 @@
 # brought to you here(DARK COBRA) by... @hellboi_atul ..
 # Don't remove these lines else Gey...
 
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.types import MessageEntityMentionName
+
 # _______________________________________________________________________________________________________________
 from userbot import CMD_HELP
-
-from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from userbot.events import register
-from telethon.tl.types import MessageEntityMentionName
 
 
 async def get_full_user(event):
-    args = event.pattern_match.group(1).split(':', 1)
+    args = event.pattern_match.group(1).split(":", 1)
     extra = None
     if event.reply_to_msg_id and not len(args) == 2:
         previous_message = await event.get_reply_message()
@@ -27,15 +27,16 @@ async def get_full_user(event):
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
-            if isinstance(probable_user_mention_entity,
-                          MessageEntityMentionName):
+            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("Error... Please report at @NightCoreUserbot", str(err))
+            return await event.edit(
+                "Error... Please report at @NightCoreUserbot", str(err)
+            )
     return user_obj, extra
 
 
@@ -81,9 +82,7 @@ async def gben(userbot):
         return await dark.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1289422521:
-            return await dark.edit(
-                f"**You nub nibba..I can't gben my creator..**"
-            )
+            return await dark.edit(f"**You nub nibba..I can't gben my creator..**")
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
         except BaseException:
@@ -147,7 +146,9 @@ async def gunben(userbot):
         return await dark.edit("Someting Went Wrong 🤔")
     if user:
         if user.id == 1289422521:
-            return await dark.edit("**You nub nibba..can't gban or ungban my creator... !**")
+            return await dark.edit(
+                "**You nub nibba..can't gban or ungban my creator... !**"
+            )
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
         except BaseException:
@@ -180,10 +181,12 @@ async def gunben(userbot):
     )
 
 
-CMD_HELP.update({
-    "gban": "\
+CMD_HELP.update(
+    {
+        "gban": "\
 `.gban`\
 \nUsage: Globally Ban users from all the Group Administrations bots where you are SUDO.\
 \n\n`.ungban reason`\
 \nUsage: Globally unBan users from all the Group Administrations bots where you are SUDO"
-})
+    }
+)

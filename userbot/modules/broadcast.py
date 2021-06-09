@@ -1,8 +1,8 @@
 # Port from ultroid
 # Port by = @manusiarskitan
 
-from userbot.events import register
 from userbot import CMD_HELP, bot
+from userbot.events import register
 
 
 @register(outgoing=True, pattern="^.bc (.*)")
@@ -23,11 +23,14 @@ async def gcast(event):
                 await bot.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await kk.edit(f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**")
+    await kk.edit(
+        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**"
+    )
 
-    
+
 CMD_HELP.update(
     {
         "broadcast": "`.bc <pesan>`\
     \nPenjelasan: Global Broadcast mengirim pesan ke Seluruh Grup."
-    })
+    }
+)
