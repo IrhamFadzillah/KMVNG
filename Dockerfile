@@ -4,7 +4,7 @@ FROM irhamfadzillah/yama:latest
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b x-sql-extended https://github.com/IrhamFadzillah/KMVNG /root/userbot
+RUN git clone -b master https://github.com/IrhamFadzillah/KMVNG /root/userbot
 RUN mkdir /root/userbot/.bin
 RUN pip install --upgrade pip setuptools
 WORKDIR /root/userbot
