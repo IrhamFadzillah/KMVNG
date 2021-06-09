@@ -203,7 +203,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "In case you maintain a fork, add your repo URL here.",
-      "value": "https://github.com/IrhamFadzillah/Yama",
+      "value": "https://github.com/IrhamFadzillah/KMVNG",
       "required": false
     },
     "BOT_TOKEN": {
