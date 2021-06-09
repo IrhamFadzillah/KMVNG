@@ -105,7 +105,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#NOTE \n" "Bot Yama Berhasil Di Update"
+                BOTLOG_CHATID, "#NOTE \n" "KMVNG Berhasil Di Update"
             )
 
     else:
@@ -131,7 +131,7 @@ async def update(event, repo, ups_rem, ac_br):
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#NOTICE \n" "Bot Yama Berhasil Di Update"
+            BOTLOG_CHATID, "#NOTICE \n" "KMVNG Berhasil Di Update"
         )
         await asyncio.sleep(10)
         await event.delete()
@@ -195,7 +195,7 @@ async def upstream(event):
 
     if changelog == "" and force_update is False:
         await event.edit(
-            f"\n`Bot Yama\n` sudah **versi terbaru**\n`BRANCH:`**{UPSTREAM_REPO_BRANCH}**\n"
+            f"\n`KMVNG\n`sudah **versi terbaru**\n`BRANCH:`**{UPSTREAM_REPO_BRANCH}**\n"
         )
         await asyncio.sleep(15)
         await event.delete()
@@ -203,7 +203,7 @@ async def upstream(event):
 
     if conf is None and force_update is False:
         changelog_str = (
-            f"**Update Terbaru Untuk Yama[{ac_br}]:\n\nChangelog:**\n`{changelog}`"
+            f"**Update Terbaru Untuk KMVNG[{ac_br}]:\n\nChangelog:**\n`{changelog}`"
         )
         if len(changelog_str) > 4096:
             await event.edit("`Changelog is too big, view the file to see it.`")
@@ -227,10 +227,10 @@ async def upstream(event):
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
     else:
-        await event.edit("`Proses Update Bot Yama, ....`")
-        await event.edit("`Proses Update Bot Yama, loading....`")
-        await event.edit("`Proses Update Bot Yama, updating....`")
-        await event.edit("`Proses Update Bot Yama, silahkan tunggu....`")
+        await event.edit("`Proses Update KMVNG, ....`")
+        await event.edit("`Proses Update KMVNG, loading....`")
+        await event.edit("`Proses Update KMVNG, updating....`")
+        await event.edit("`Proses Update KMVNG, silahkan tunggu....`")
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
